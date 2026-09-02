@@ -732,9 +732,13 @@ footer {
     }
 
     .hero {
-        padding-top: 55px;
+    min-height: 76vh;
+    display: grid;
 
-        gap: 45px;
+    grid-template-columns: 1.7fr 0.8fr;
+
+    align-items: center;
+    gap: 60px;
     }
 
     .portrait-frame {
