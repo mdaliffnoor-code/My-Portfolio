@@ -36,21 +36,29 @@ a {
     position: sticky;
     top: 0;
     z-index: 10;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     max-width: var(--max);
     margin: auto;
+
     padding: 20px 4%;
+
     background: #091019ee;
+
     border-bottom: 1px solid var(--line);
+
     backdrop-filter: blur(12px);
 }
 
 .logo {
     font-size: 24px;
     font-weight: 900;
+
     color: var(--accent);
+
     text-decoration: none;
 }
 
@@ -61,7 +69,9 @@ a {
 
 .navlinks a {
     color: var(--muted);
+
     font-size: 14px;
+
     text-decoration: none;
 }
 
@@ -71,9 +81,13 @@ a {
 
 .menu {
     display: none;
+
     background: none;
+
     border: 1px solid var(--line);
+
     color: var(--text);
+
     padding: 7px 10px;
 }
 
@@ -90,6 +104,7 @@ footer {
 
 section {
     padding: 90px 4%;
+
     border-bottom: 1px solid var(--line);
 }
 
@@ -100,22 +115,33 @@ section h2 {
 
 
 /* =========================
-   HOME HERO
+   HERO
 ========================= */
 
 .hero {
     min-height: 76vh;
+
     display: grid;
-    grid-template-columns: 2fr 1fr;
+
+    grid-template-columns: 1.6fr 1fr;
+
     align-items: center;
+
     gap: 70px;
+}
+
+.hero-content {
+    max-width: 720px;
 }
 
 .eyebrow,
 .number {
     color: var(--accent);
+
     font-size: 12px;
+
     font-weight: 800;
+
     letter-spacing: 2px;
 }
 
@@ -123,20 +149,27 @@ section h2 {
 .page-hero h1,
 .project-hero h1 {
     font-size: clamp(52px, 8vw, 100px);
+
     line-height: 0.92;
+
     margin: 18px 0;
 }
 
 .hero h2 {
     font-size: clamp(24px, 3.5vw, 43px);
+
     line-height: 1.15;
+
     color: var(--muted);
+
     margin: 0;
 }
 
 .lead {
     max-width: 720px;
+
     color: var(--muted);
+
     font-size: 19px;
 }
 
@@ -151,63 +184,122 @@ section h2 {
 
 .buttons a {
     display: inline-block;
+
     text-decoration: none;
+
     padding: 12px 18px;
+
     margin-right: 10px;
+
+    transition: 0.2s ease;
 }
 
 .primary {
     background: var(--accent);
+
     color: #07110f;
+}
+
+.primary:hover {
+    transform: translateY(-2px);
 }
 
 .secondary {
     border: 1px solid var(--line);
 }
 
+.secondary:hover {
+    border-color: var(--accent);
 
-/* =========================
-   PHOTO / PORTRAIT
-========================= */
-
-.photo {
-    aspect-ratio: 1;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    border: 1px dashed #496071;
-    background: linear-gradient(135deg, #0d1721, #162535);
-    color: #6f8494;
-    font-weight: 800;
+    color: var(--accent);
 }
 
+
+/* =========================
+   PROFILE PHOTO
+========================= */
+
 .portrait {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
     text-align: center;
+}
+
+.portrait-frame {
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    padding: 5px;
+
+    border: 2px solid #d7e0e8;
+
+    background: #536273;
+
+    box-shadow:
+        0 0 0 5px rgba(150, 166, 181, 0.25),
+        0 12px 35px rgba(0, 0, 0, 0.35);
+
+    overflow: hidden;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center 20%;
+
+    border-radius: 50%;
+
+    display: block;
 }
 
 .portrait span {
     display: block;
-    margin-top: 10px;
+
+    margin-top: 16px;
+
     color: var(--muted);
+
+    font-size: 14px;
 }
 
 
 /* =========================
-   HOME INFORMATION STRIP
+   HOME STRIP
 ========================= */
 
 .home-strip {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     padding-top: 32px;
+
     padding-bottom: 32px;
 }
 
 .home-strip div {
     display: flex;
+
     flex-direction: column;
+
     border-right: 1px solid var(--line);
+
     padding-left: 20px;
+}
+
+.home-strip div:last-child {
+    border-right: none;
 }
 
 .home-strip strong {
@@ -220,13 +312,17 @@ section h2 {
 
 
 /* =========================
-   HEADINGS
+   SECTION HEADINGS
 ========================= */
 
 .heading-row {
     display: flex;
+
     justify-content: space-between;
+
     align-items: end;
+
+    gap: 20px;
 }
 
 .heading-row > a {
@@ -235,27 +331,37 @@ section h2 {
 
 
 /* =========================
-   CARDS
+   PROJECT CARDS
 ========================= */
 
 .grid {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 18px;
 }
 
 .card {
     display: block;
+
     background: var(--panel);
+
     padding: 30px;
+
     border: 1px solid var(--line);
+
     min-height: 300px;
+
     text-decoration: none;
+
+    transition: 0.2s ease;
 }
 
 .card:hover {
     border-color: var(--accent);
-    transform: translateY(-2px);
+
+    transform: translateY(-3px);
 }
 
 .card > p:first-child {
@@ -277,17 +383,24 @@ section h2 {
 
 .tags {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 9px;
+
     margin-top: 22px;
 }
 
 .tags span,
 .card span {
     border: 1px solid var(--line);
+
     padding: 6px 11px;
+
     border-radius: 30px;
+
     color: #c8d4dc;
+
     font-size: 13px;
 }
 
@@ -299,6 +412,7 @@ section h2 {
 .page-hero,
 .project-hero {
     padding-top: 120px;
+
     padding-bottom: 100px;
 }
 
@@ -315,23 +429,29 @@ section h2 {
 .two,
 .project-detail {
     display: grid;
+
     grid-template-columns: 1fr 1.5fr;
+
     gap: 70px;
 }
 
 .body-copy {
     color: var(--muted);
+
     font-size: 18px;
 }
 
 .mini-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 18px;
 }
 
 .mini-grid article {
     border-top: 1px solid var(--line);
+
     padding-top: 20px;
 }
 
@@ -341,13 +461,16 @@ section h2 {
 
 
 /* =========================
-   EXPERIENCE / TIMELINE
+   EXPERIENCE
 ========================= */
 
 .timeline article {
     display: grid;
+
     grid-template-columns: 160px 1fr;
+
     padding: 30px 0;
+
     border-top: 1px solid var(--line);
 }
 
@@ -357,11 +480,13 @@ section h2 {
 
 .timeline h3 {
     margin: 0;
+
     font-size: 24px;
 }
 
 .timeline p {
     color: var(--muted);
+
     max-width: 700px;
 }
 
@@ -372,6 +497,7 @@ section h2 {
 
 .skill-groups article {
     padding: 30px 0;
+
     border-top: 1px solid var(--line);
 }
 
@@ -381,16 +507,78 @@ section h2 {
 
 
 /* =========================
+   SKILL ICONS
+========================= */
+
+.skill-icons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 35px;
+
+    margin-top: 28px;
+}
+
+.skill-item {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: auto;
+
+    text-align: left;
+}
+
+.skill-item i {
+    font-size: 42px;
+
+    color: var(--text);
+
+    transition: transform 0.2s ease,
+                color 0.2s ease;
+}
+
+.skill-item span {
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.skill-item:hover i {
+    color: var(--accent);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
    PROJECT LIST
 ========================= */
 
 .project-list > a {
     display: grid;
+
     grid-template-columns: 80px 1fr auto;
+
     align-items: center;
+
     gap: 20px;
+
     padding: 32px 0;
+
     border-top: 1px solid var(--line);
+
     text-decoration: none;
 }
 
@@ -418,29 +606,39 @@ section h2 {
 
 .back {
     color: var(--muted);
+
     text-decoration: none;
 }
 
 .shot {
     margin-top: 35px;
+
     min-height: 280px;
+
     border: 1px dashed #496071;
+
     display: grid;
+
     place-items: center;
+
     text-align: center;
+
     color: #708797;
+
     background: #0d1721;
 }
 
 .placeholder {
     border-left: 2px solid var(--accent);
+
     padding-left: 18px;
+
     margin-top: 30px;
 }
 
 
 /* =========================
-   CONTACT / DIGITAL PRESENCE
+   CONTACT
 ========================= */
 
 .big-links {
@@ -449,23 +647,31 @@ section h2 {
 
 .big-links a {
     display: grid;
+
     grid-template-columns: 1fr auto;
+
     position: relative;
+
     font-size: clamp(30px, 5vw, 62px);
+
     font-weight: 700;
+
     text-decoration: none;
+
     padding: 25px 0;
+
     border-top: 1px solid var(--line);
 }
 
 .big-links small {
     grid-column: 1 / -1;
+
     color: var(--muted);
 
-    /* Increased from 12px */
     font-size: 16px;
 
     font-weight: 400;
+
     margin-top: 4px;
 }
 
@@ -480,9 +686,13 @@ section h2 {
 
 footer {
     display: flex;
+
     justify-content: space-between;
+
     padding: 30px 4%;
+
     color: var(--muted);
+
     font-size: 12px;
 }
 
@@ -499,13 +709,21 @@ footer {
 
     .navlinks {
         display: none;
+
         position: absolute;
+
         top: 68px;
+
         left: 4%;
+
         right: 4%;
+
         padding: 20px;
+
         background: var(--panel);
+
         border: 1px solid var(--line);
+
         flex-direction: column;
     }
 
@@ -523,19 +741,30 @@ footer {
 
     .hero {
         padding-top: 55px;
+
+        gap: 45px;
+    }
+
+    .portrait-frame {
+        width: 250px;
+
+        height: 250px;
     }
 
     .portrait {
-        max-width: 270px;
+        margin-top: 20px;
     }
 
     .home-strip {
         grid-template-columns: 1fr;
+
         gap: 20px;
     }
 
     .home-strip div {
         border-right: 0;
+
+        padding-left: 0;
     }
 
     .heading-row {
@@ -558,43 +787,10 @@ footer {
     .nav {
         margin: 0 2%;
     }
-}
 
-/* =========================
-   SKILL ICONS
-========================= */
+    footer {
+        flex-direction: column;
 
-.skill-icons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 35px;
-    margin-top: 28px;
-}
-
-.skill-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    width: auto;
-    text-align: left;
-}
-
-.skill-item i {
-    font-size: 42px;
-    color: var(--text);
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.skill-item span {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1;
-    white-space: nowrap;
-}
-
-.skill-item:hover i {
-    color: var(--accent);
-    transform: translateY(-3px);
+        gap: 8px;
+    }
 }
