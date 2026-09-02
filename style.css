@@ -567,33 +567,34 @@ footer {
 .skill-icons {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    align-items: center;
+    gap: 35px;
     margin-top: 28px;
 }
 
 .skill-item {
-    width: 90px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: 9px;
-    text-align: center;
+    gap: 10px;
+    width: auto;
+    text-align: left;
 }
 
 .skill-item i {
-    font-size: 48px;
+    font-size: 42px;
     color: var(--text);
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .skill-item span {
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.3;
+    font-size: 15px;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .skill-item:hover i {
     color: var(--accent);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
