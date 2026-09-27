@@ -19,6 +19,7 @@
 <body>
 
   <!-- NAVIGATION -->
+
   <nav class="nav">
 
     <a class="logo" href="../index.html">MA.</a>
@@ -56,8 +57,9 @@
       <h1>PortCheck Network Port Scanner</h1>
 
       <p class="lead">
-        A lightweight network utility for identifying open TCP ports
-        and understanding the services exposed on a host.
+        A lightweight network utility for identifying open TCP ports,
+        understanding exposed services and presenting basic security
+        guidance through a web interface.
       </p>
 
       <div class="tags">
@@ -89,7 +91,7 @@
           </p>
 
           <h2>
-            What I worked on
+            Project overview
           </h2>
 
         </div>
@@ -98,18 +100,23 @@
         <div class="body-copy">
 
           <p>
-            PortCheck started as a Cloud and DevOps bootcamp task to
-            create a Bash script that accepts a target host and uses
-            Netcat (<code>nc</code>) to determine whether TCP ports
+            PortCheck began as a Cloud and DevOps bootcamp task focused
+            on creating a Bash script that accepts a target host and
+            uses Netcat (<code>nc</code>) to determine whether TCP ports
             are open.
           </p>
 
           <p>
-            I extended the task by building a Flask web interface that
-            allows the user to scan a controlled set or range of ports.
-            Detected ports are displayed together with their common
-            services and basic risk guidance, making the results easier
-            to understand.
+            The original command-line utility was extended into a Flask
+            web application, providing a more accessible interface for
+            scanning a controlled set or range of TCP ports.
+          </p>
+
+          <p>
+            Detected ports are presented together with their commonly
+            associated services and basic risk guidance, making the
+            scan results easier to understand while introducing
+            practical networking and DevSecOps concepts.
           </p>
 
 
@@ -162,22 +169,23 @@
         <div class="body-copy">
 
           <p>
-            The user enters a target IP address or hostname through
-            the web interface. The input is validated before being
-            passed to the backend scanning process.
+            The scanning process begins when a target IP address or
+            hostname is submitted through the web interface. The input
+            is validated before being passed to the backend scanning
+            process.
           </p>
 
           <p>
-            Flask executes the Bash scanner, which uses Netcat to test
-            TCP connectivity against the selected ports. Ports that
-            successfully accept a connection are returned to the
-            application.
+            Flask connects the web interface with the Bash scanner,
+            which uses Netcat to test TCP connectivity against the
+            selected ports. Ports that successfully accept a connection
+            are returned to the application as detected open ports.
           </p>
 
           <p>
-            Detected ports are then mapped to common services before
-            being presented through the interface together with basic
-            risk guidance.
+            The results are then mapped to commonly associated services
+            and displayed through the interface together with basic
+            security guidance.
           </p>
 
 
@@ -304,7 +312,7 @@
           </p>
 
           <h2>
-            Scanning my environment
+            Testing the local environment
           </h2>
 
         </div>
@@ -313,17 +321,22 @@
         <div class="body-copy">
 
           <p>
-            I tested PortCheck against my own local environment.
-            The scanner identified reachable TCP services and displayed
-            their corresponding port, service and risk guidance.
+            PortCheck was tested against a local environment to identify
+            reachable TCP services and compare the results with services
+            actively listening on the system.
           </p>
 
           <p>
-            During testing, the scanner detected services including
-            SSH, DNS, HTTP and PostgreSQL. The risk indicator provides
-            additional context about the potential exposure of each
-            service rather than treating every open port as a
-            vulnerability.
+            During testing, the scanner detected services including SSH,
+            DNS, HTTP and PostgreSQL. Each detected port is displayed
+            alongside its commonly associated service and a basic risk
+            indicator.
+          </p>
+
+          <p>
+            The risk information provides additional context around
+            network exposure rather than treating every detected open
+            port as a security vulnerability.
           </p>
 
 
@@ -367,7 +380,7 @@
           </p>
 
           <h2>
-            Checking the results
+            Validating the scan results
           </h2>
 
         </div>
@@ -376,7 +389,7 @@
         <div class="body-copy">
 
           <p>
-            To verify the scanner results, I compared them with the
+            Scanner results were independently compared with the
             listening TCP ports reported directly by Ubuntu using the
             <code>ss</code> networking utility.
           </p>
@@ -394,14 +407,14 @@
 
 
           <p>
-            This provided a second way to confirm that the ports
-            identified by PortCheck corresponded with services
-            actually listening on the system.
+            This provides a second source of verification and helps
+            confirm that the ports identified by PortCheck correspond
+            with services actually listening on the system.
           </p>
 
 
           <!--
-          Uncomment this after adding:
+          Uncomment after adding:
           assets/images/portcheck-verification.png
 
           <figure class="project-shot">
@@ -452,9 +465,16 @@
         <div class="body-copy">
 
           <p>
-            One of the main learning objectives was understanding the
-            security risk of passing user-controlled input to operating
-            system commands.
+            A key security consideration for PortCheck is the handling
+            of user-controlled input before it reaches operating system
+            commands.
+          </p>
+
+          <p>
+            Validation and controlled command execution are therefore
+            applied between the web interface and the backend scanner
+            to reduce the risk associated with passing untrusted values
+            to system utilities.
           </p>
 
 
@@ -564,8 +584,9 @@
         <div class="body-copy">
 
           <p>
-            I added simple Low, Medium and High indicators to make
-            the scan results easier to interpret.
+            Simple Low, Medium and High indicators provide additional
+            context for interpreting the services detected during a
+            port scan.
           </p>
 
 
@@ -621,11 +642,16 @@
 
 
           <p>
-            These indicators are intended as basic educational
-            guidance. An open port does not automatically mean that
-            a system is vulnerable. Configuration, authentication,
-            firewall rules and network exposure also affect the
-            actual security risk.
+            These indicators are intended as basic educational guidance
+            rather than a vulnerability assessment. An open port does
+            not automatically indicate that a system is vulnerable.
+          </p>
+
+          <p>
+            Actual risk also depends on factors such as network exposure,
+            service configuration, authentication, firewall rules,
+            software versions and whether the service needs to be
+            externally accessible.
           </p>
 
         </div>
@@ -660,22 +686,29 @@
         <div class="body-copy">
 
           <p>
-            This project helped me understand TCP ports and listening
-            services more practically by allowing me to compare the
-            results from my own scanner with Linux networking tools.
+            This project provided practical experience with TCP ports
+            and listening services by connecting networking concepts
+            with actual scan results from a Linux environment.
           </p>
 
           <p>
-            I also gained hands-on experience with Bash scripting,
-            Netcat, Flask integration and secure handling of user
-            input.
+            Comparing PortCheck results with native Linux networking
+            tools also demonstrated the importance of independently
+            verifying application output rather than relying on a
+            single source of information.
           </p>
 
           <p>
-            Most importantly, it showed me how a simple Linux
-            command-line utility can be integrated into a web
-            application while still considering basic DevSecOps
-            practices.
+            The project also provided hands-on experience with Bash
+            scripting, Netcat, Flask integration, input validation and
+            safer execution of operating system commands.
+          </p>
+
+          <p>
+            Overall, PortCheck demonstrates how a simple Linux
+            command-line utility can be developed into a web-based
+            networking tool while incorporating basic DevSecOps
+            considerations.
           </p>
 
         </div>
