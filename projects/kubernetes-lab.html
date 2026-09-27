@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +17,7 @@
 
 <body>
 
+  <!-- NAVIGATION -->
   <nav class="nav">
     <a class="logo" href="../index.html">MA.</a>
 
@@ -90,11 +92,20 @@
             to understand.
           </p>
 
-          <div class="shot">
-            ADD PORTCHECK MAIN SCREENSHOT
-            <br>
-            <small>assets/images/portcheck-results.png</small>
-          </div>
+          <!-- MAIN APPLICATION SCREENSHOT -->
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/portcheck-main.png"
+              alt="PortCheck network port scanner interface"
+              class="project-img"
+            >
+
+            <figcaption>
+              PortCheck web interface for scanning TCP ports on a target host.
+            </figcaption>
+
+          </figure>
 
         </div>
 
@@ -103,7 +114,7 @@
     </section>
 
 
-    <!-- HOW IT WORKS -->
+    <!-- WORKFLOW -->
     <section>
 
       <div class="project-detail">
@@ -117,33 +128,64 @@
 
           <p>
             The user enters a target IP address or hostname through the
-            web interface. The input is validated before being passed to
-            the backend scanning process.
+            web interface. The input is validated before being passed
+            to the backend scanning process.
           </p>
 
           <p>
-            Flask then executes the Bash scanner, which uses Netcat to
-            test TCP connectivity against the selected ports. Only ports
-            that successfully accept a connection are returned to the
+            Flask executes the Bash scanner, which uses Netcat to test
+            TCP connectivity against the selected ports. Ports that
+            successfully accept a connection are returned to the
             application.
           </p>
 
           <p>
-            The results are mapped to common services such as SSH, DNS,
-            HTTP and PostgreSQL before being presented through the web
-            interface with simple risk guidance.
+            The detected ports are then mapped to common services before
+            being presented through the interface with basic risk guidance.
           </p>
 
-          <div class="shot">
-            USER
-            &nbsp; → &nbsp;
-            FLASK
-            &nbsp; → &nbsp;
-            BASH
-            &nbsp; → &nbsp;
-            NETCAT
-            &nbsp; → &nbsp;
-            RESULTS
+
+          <!-- WORKFLOW VISUAL -->
+          <div class="portcheck-flow">
+
+            <div class="flow-item">
+              <span>01</span>
+              <strong>User</strong>
+              <small>Target input</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>02</span>
+              <strong>Flask</strong>
+              <small>Validate input</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>03</span>
+              <strong>Bash</strong>
+              <small>Scanner script</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>04</span>
+              <strong>Netcat</strong>
+              <small>Test TCP ports</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>05</span>
+              <strong>Results</strong>
+              <small>Open ports</small>
+            </div>
+
           </div>
 
         </div>
@@ -167,22 +209,33 @@
 
           <p>
             I tested PortCheck against my own local environment. The
-            scanner identified several reachable TCP services and
-            displayed the corresponding port, service and risk guidance.
+            scanner identified reachable TCP services and displayed
+            their corresponding port, service and risk guidance.
           </p>
 
           <p>
-            For example, the scan detected services including SSH,
-            DNS, HTTP and PostgreSQL. The risk indicator provides
-            context about the potential exposure of each service rather
-            than treating every open port as a vulnerability.
+            During testing, the scanner detected services including
+            SSH, DNS, HTTP and PostgreSQL. The risk indicator provides
+            additional context about the potential exposure of each
+            service rather than treating every open port as a
+            vulnerability.
           </p>
 
-          <div class="shot">
-            ADD SCAN RESULTS SCREENSHOT
-            <br>
-            <small>assets/images/portcheck-scan-results.png</small>
-          </div>
+
+          <!-- SCAN RESULT SCREENSHOT -->
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/portcheck-scan-results.png"
+              alt="PortCheck showing detected open TCP ports"
+              class="project-img"
+            >
+
+            <figcaption>
+              PortCheck identifying open ports and their associated services.
+            </figcaption>
+
+          </figure>
 
         </div>
 
@@ -209,17 +262,32 @@
             <code>ss</code> networking utility.
           </p>
 
+          <div class="command-box">
+            <span>$</span>
+            <code>sudo ss -tlnp</code>
+          </div>
+
           <p>
             This allowed me to confirm that the ports identified by
             PortCheck corresponded with services actually listening on
             the system.
           </p>
 
-          <div class="shot">
-            ADD SS TERMINAL SCREENSHOT
-            <br>
-            <small>assets/images/portcheck-verification.png</small>
-          </div>
+
+          <!-- TERMINAL VERIFICATION SCREENSHOT -->
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/portcheck-verification.png"
+              alt="Ubuntu terminal showing listening TCP ports"
+              class="project-img"
+            >
+
+            <figcaption>
+              Listening TCP services independently verified from Ubuntu.
+            </figcaption>
+
+          </figure>
 
         </div>
 
@@ -228,7 +296,7 @@
     </section>
 
 
-    <!-- SECURITY -->
+    <!-- DEVSECOPS -->
     <section>
 
       <div class="project-detail">
@@ -246,19 +314,51 @@
             system commands.
           </p>
 
-          <p>
-            The application validates the target and port values before
-            execution. Port numbers are restricted to the valid TCP
-            range, while the target input only accepts the expected
-            hostname or IP address format.
-          </p>
+          <div class="security-points">
 
-          <p>
-            When Flask starts the scanner, user values are passed as
-            separate subprocess arguments instead of constructing a
-            shell command directly from the submitted input. This
-            reduces the risk of shell command injection.
-          </p>
+            <div class="security-point">
+              <span>01</span>
+
+              <div>
+                <strong>Input Validation</strong>
+
+                <p>
+                  Target and port values are checked before they are
+                  passed to the scanner.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="security-point">
+              <span>02</span>
+
+              <div>
+                <strong>Controlled Port Range</strong>
+
+                <p>
+                  Port values are restricted to valid TCP port numbers
+                  between 1 and 65535.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="security-point">
+              <span>03</span>
+
+              <div>
+                <strong>Safe Command Execution</strong>
+
+                <p>
+                  User values are passed as separate subprocess
+                  arguments rather than being inserted directly into a
+                  shell command.
+                </p>
+              </div>
+            </div>
+
+          </div>
 
         </div>
 
@@ -284,13 +384,47 @@
             scan results easier to interpret.
           </p>
 
+
+          <div class="risk-guide">
+
+            <div class="risk-row">
+              <span class="risk-badge risk-low">LOW</span>
+
+              <p>
+                Lower exposure concern, although the service should
+                still be configured and maintained securely.
+              </p>
+            </div>
+
+
+            <div class="risk-row">
+              <span class="risk-badge risk-medium">MEDIUM</span>
+
+              <p>
+                A service that should be intentionally exposed and
+                protected with appropriate configuration and access
+                controls.
+              </p>
+            </div>
+
+
+            <div class="risk-row">
+              <span class="risk-badge risk-high">HIGH</span>
+
+              <p>
+                A sensitive service where unnecessary network exposure
+                should generally be restricted.
+              </p>
+            </div>
+
+          </div>
+
+
           <p>
-            These indicators provide basic educational guidance based
-            on the type of service detected and its typical exposure
-            considerations. An open port does not automatically mean
-            that a system is vulnerable — configuration, authentication,
-            firewall rules and network exposure also affect the actual
-            security risk.
+            These indicators are intended as basic educational guidance.
+            An open port does not automatically mean that a system is
+            vulnerable. Configuration, authentication, firewall rules
+            and network exposure also affect the actual security risk.
           </p>
 
         </div>
@@ -322,8 +456,9 @@
             I also gained hands-on experience with Bash scripting,
             Netcat, Flask integration and secure handling of user input.
             Most importantly, it showed me how a simple Linux
-            command-line tool can be integrated into an application
-            while still considering basic DevSecOps practices.
+            command-line utility can be integrated into a web
+            application while still considering basic DevSecOps
+            practices.
           </p>
 
         </div>
@@ -332,7 +467,6 @@
 
     </section>
 
-
   </main>
 
 
@@ -340,6 +474,7 @@
     <span>© 2026 Muhammad Aliff</span>
     <span>Cloud • DevOps • Automation</span>
   </footer>
+
 
   <script src="../script.js"></script>
 
