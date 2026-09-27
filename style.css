@@ -1083,97 +1083,175 @@ footer {
   opacity: 0.65;
 }
 
+
 /* =========================================================
-   PROJECT PAGE - TWO COLUMN LAYOUT
+   FLASK DEVOPS PROJECT — TRUE TEXT LEFT / IMAGE RIGHT
    ========================================================= */
 
+/*
+   Override the normal portfolio section layout.
+   Each project section uses the full available width.
+*/
 .split-project-section {
-  padding-top: clamp(3rem, 6vw, 5rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  display: block !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 70px 46px !important;
 }
 
 
-/* ---------- SECTION HEADING ---------- */
-
-.project-section-heading {
-  margin-bottom: 2.5rem;
+/* Section title stays across the top */
+.split-project-section .project-section-heading {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 35px 0 !important;
+  padding: 0 !important;
 }
 
-.project-section-heading .number {
-  margin-bottom: 0.8rem;
+.split-project-section .project-section-heading .number {
+  margin: 0 0 12px 0 !important;
 }
 
-.project-section-heading h2 {
-  margin: 0;
+.split-project-section .project-section-heading h2 {
+  margin: 0 !important;
 }
 
 
-/* ---------- TEXT LEFT / MEDIA RIGHT ---------- */
+/* =========================================================
+   THIS IS THE IMPORTANT PART
 
-.project-content-grid {
-  display: grid;
+   LEFT  = TEXT
+   RIGHT = IMAGE / CARD / VIDEO
+   ========================================================= */
+
+.split-project-section .project-content-grid {
+  display: grid !important;
+
   grid-template-columns:
-    minmax(0, 0.9fr)
-    minmax(0, 1.15fr);
+    minmax(0, 1fr)
+    minmax(0, 1fr) !important;
 
-  gap: clamp(2.5rem, 6vw, 6rem);
+  column-gap: 60px !important;
 
-  align-items: start;
+  align-items: start !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 
-/* ---------- TEXT ---------- */
+/* LEFT SIDE */
 
-.project-content-text {
-  min-width: 0;
+.split-project-section .project-content-text {
+  grid-column: 1 !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.project-content-text p {
-  margin-top: 0;
-  margin-bottom: 1.35rem;
+.split-project-section .project-content-text p {
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
 
-  line-height: 1.75;
+  line-height: 1.75 !important;
 }
 
 
-/* ---------- IMAGE ---------- */
+/* RIGHT SIDE — IMAGE */
 
-.project-media {
-  margin: 0;
-  min-width: 0;
+.split-project-section .project-media {
+  grid-column: 2 !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.project-media .project-img {
-  display: block;
+.split-project-section .project-media img {
+  display: block !important;
 
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+
+  margin: 0 !important;
 
   border-radius: 16px;
-
-  border:
-    1px solid rgba(128, 128, 128, 0.25);
-
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.12);
 }
 
-.project-media figcaption {
-  margin-top: 0.8rem;
+
+/* IMAGE CAPTION */
+
+.split-project-section .project-media figcaption {
+  margin-top: 10px !important;
 
   font-size: 0.82rem;
   line-height: 1.5;
 
-  opacity: 0.6;
+  opacity: 0.65;
 }
 
 
 /* =========================================================
-   LIVE APPLICATION BUTTON
+   RIGHT-SIDE INFORMATION CARDS
+   ========================================================= */
+
+.split-project-section .project-info-card {
+  grid-column: 2 !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+
+  padding: 28px !important;
+
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 16px;
+}
+
+
+/* =========================================================
+   VIDEO ON RIGHT
+   ========================================================= */
+
+.split-project-section .project-video {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: #000;
+}
+
+.split-project-section .project-video video {
+  display: block;
+
+  width: 100% !important;
+  height: auto !important;
+}
+
+
+/* =========================================================
+   BUTTON
    ========================================================= */
 
 .project-actions {
-  margin-top: 2rem;
+  margin-top: 25px;
 }
 
 .project-button {
@@ -1182,7 +1260,7 @@ footer {
   align-items: center;
   justify-content: center;
 
-  padding: 0.85rem 1.3rem;
+  padding: 12px 20px;
 
   border: 1px solid currentColor;
   border-radius: 999px;
@@ -1206,127 +1284,6 @@ footer {
 
 
 /* =========================================================
-   INFORMATION CARDS
-   ========================================================= */
-
-.project-info-card {
-  padding: clamp(1.5rem, 3vw, 2.3rem);
-
-  border:
-    1px solid rgba(128, 128, 128, 0.22);
-
-  border-radius: 16px;
-
-  background:
-    rgba(128, 128, 128, 0.035);
-}
-
-.project-info-card .info-number {
-  display: block;
-
-  margin-bottom: 1.5rem;
-
-  font-size: 0.7rem;
-  font-weight: 800;
-
-  letter-spacing: 0.12em;
-
-  opacity: 0.55;
-}
-
-.project-info-card h3 {
-  margin:
-    1.2rem 0 0.35rem;
-
-  font-size: 1rem;
-}
-
-.project-info-card p {
-  margin: 0;
-
-  font-size: 0.9rem;
-  line-height: 1.6;
-
-  opacity: 0.7;
-}
-
-.info-arrow {
-  display: block;
-
-  margin: 1rem 0;
-
-  font-size: 1.3rem;
-
-  opacity: 0.35;
-}
-
-
-/* =========================================================
-   WORKFLOW STEPS
-   ========================================================= */
-
-.workflow-steps {
-  margin-top: 2rem;
-
-  border-top:
-    1px solid rgba(128, 128, 128, 0.2);
-}
-
-.workflow-steps > div {
-  display: grid;
-
-  grid-template-columns: 45px 1fr;
-
-  gap: 1rem;
-
-  padding: 1rem 0;
-
-  border-bottom:
-    1px solid rgba(128, 128, 128, 0.2);
-}
-
-.workflow-steps span {
-  font-size: 0.72rem;
-  font-weight: 800;
-
-  opacity: 0.45;
-}
-
-.workflow-steps p {
-  margin: 0;
-  line-height: 1.5;
-}
-
-
-/* =========================================================
-   PIPELINE LABELS
-   ========================================================= */
-
-.pipeline-list {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 0.6rem;
-
-  margin-top: 1.8rem;
-}
-
-.pipeline-list span {
-  padding: 0.45rem 0.75rem;
-
-  border:
-    1px solid rgba(128, 128, 128, 0.3);
-
-  border-radius: 999px;
-
-  font-size: 0.68rem;
-  font-weight: 800;
-
-  letter-spacing: 0.08em;
-}
-
-
-/* =========================================================
    COMMAND BOX
    ========================================================= */
 
@@ -1335,100 +1292,62 @@ footer {
 
   align-items: center;
 
-  gap: 0.8rem;
+  gap: 10px;
 
-  margin: 0.8rem 0;
+  margin: 10px 0;
 
-  padding: 0.9rem 1rem;
-
-  border-radius: 10px;
+  padding: 12px 15px;
 
   background: #111;
 
-  color: #f5f5f5;
+  color: #fff;
+
+  border-radius: 10px;
 
   overflow-x: auto;
 }
 
 .command-box span {
-  font-weight: 700;
   color: #63e6be;
+
+  font-weight: bold;
 }
 
 .command-box code {
   color: inherit;
+
   white-space: nowrap;
 }
 
 
 /* =========================================================
-   VIDEO
+   MOBILE / TABLET
+
+   Stack text above image
    ========================================================= */
 
-.project-video {
-  width: 100%;
-
-  overflow: hidden;
-
-  border-radius: 16px;
-
-  border:
-    1px solid rgba(128, 128, 128, 0.25);
-
-  background: #000;
-
-  box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.12);
-}
-
-.project-video video {
-  display: block;
-
-  width: 100%;
-  height: auto;
-}
-
-.video-caption {
-  margin-top: 0.8rem;
-
-  font-size: 0.82rem;
-
-  opacity: 0.6;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-  .project-content-grid {
-    grid-template-columns: 1fr;
-
-    gap: 2rem;
-  }
-
-  .project-section-heading {
-    margin-bottom: 1.8rem;
-  }
-
-  .project-media {
-    width: 100%;
-  }
-
-}
-
-
-@media (max-width: 520px) {
+@media (max-width: 850px) {
 
   .split-project-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding: 50px 22px !important;
   }
 
-  .project-button {
-    width: 100%;
+  .split-project-section .project-content-grid {
+    grid-template-columns: 1fr !important;
+
+    row-gap: 30px !important;
+  }
+
+  .split-project-section .project-content-text {
+    grid-column: 1 !important;
+  }
+
+  .split-project-section .project-media {
+    grid-column: 1 !important;
+  }
+
+  .split-project-section .project-info-card {
+    grid-column: 1 !important;
   }
 
 }
