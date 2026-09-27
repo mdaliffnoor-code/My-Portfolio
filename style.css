@@ -790,3 +790,269 @@ footer {
         gap: 8px;
     }
 }
+
+
+/* =========================================================
+   PORTCHECK PROJECT
+   ========================================================= */
+
+
+/* ---------- PROJECT SCREENSHOTS ---------- */
+
+.project-shot {
+  margin: 2rem 0 0;
+}
+
+.project-img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border-radius: 16px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+.project-shot figcaption {
+  margin-top: 0.8rem;
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  opacity: 0.65;
+}
+
+
+/* ---------- WORKFLOW ---------- */
+
+.portcheck-flow {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  gap: 0.75rem;
+
+  margin-top: 2rem;
+}
+
+.flow-item {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 1.2rem 0.8rem;
+
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 14px;
+
+  text-align: center;
+}
+
+.flow-item span {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+
+  opacity: 0.5;
+}
+
+.flow-item strong {
+  display: block;
+
+  margin-bottom: 0.3rem;
+
+  font-size: 0.95rem;
+}
+
+.flow-item small {
+  display: block;
+
+  font-size: 0.72rem;
+  line-height: 1.4;
+
+  opacity: 0.6;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+
+  font-size: 1.2rem;
+
+  opacity: 0.4;
+}
+
+
+/* ---------- TERMINAL COMMAND ---------- */
+
+.command-box {
+  display: flex;
+  align-items: center;
+
+  gap: 0.8rem;
+
+  margin: 1.5rem 0;
+
+  padding: 1rem 1.2rem;
+
+  border-radius: 12px;
+
+  background: #111;
+  color: #f5f5f5;
+
+  overflow-x: auto;
+}
+
+.command-box span {
+  color: #63e6be;
+  font-weight: 700;
+}
+
+.command-box code {
+  color: inherit;
+  white-space: nowrap;
+}
+
+
+/* ---------- SECURITY POINTS ---------- */
+
+.security-points {
+  margin-top: 2rem;
+
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.security-point {
+  display: grid;
+
+  grid-template-columns: 45px 1fr;
+
+  gap: 1rem;
+
+  padding: 1.3rem 0;
+
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.security-point > span {
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  opacity: 0.45;
+}
+
+.security-point strong {
+  display: block;
+
+  margin-bottom: 0.35rem;
+}
+
+.security-point p {
+  margin: 0;
+
+  opacity: 0.75;
+}
+
+
+/* ---------- RISK GUIDE ---------- */
+
+.risk-guide {
+  margin: 1.8rem 0;
+}
+
+.risk-row {
+  display: grid;
+
+  grid-template-columns: 90px 1fr;
+
+  align-items: center;
+
+  gap: 1.2rem;
+
+  padding: 1rem 0;
+
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.risk-row:first-child {
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.risk-row p {
+  margin: 0;
+
+  font-size: 0.9rem;
+  line-height: 1.55;
+
+  opacity: 0.75;
+}
+
+.risk-badge {
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.4rem 0.65rem;
+
+  border-radius: 999px;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.risk-low {
+  background: rgba(34, 197, 94, 0.14);
+  color: #22c55e;
+}
+
+.risk-medium {
+  background: rgba(245, 158, 11, 0.14);
+  color: #f59e0b;
+}
+
+.risk-high {
+  background: rgba(239, 68, 68, 0.14);
+  color: #ef4444;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 800px) {
+
+  .portcheck-flow {
+    flex-direction: column;
+  }
+
+  .flow-arrow {
+    justify-content: center;
+
+    transform: rotate(90deg);
+  }
+
+  .flow-item {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .risk-row {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .risk-badge {
+    width: fit-content;
+  }
+
+}
