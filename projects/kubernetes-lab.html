@@ -1,26 +1,207 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kubernetes Lab | Muhammad Aliff</title>
-  <meta name="description" content="Muhammad Aliff's Cloud and DevOps portfolio.">
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-  <nav class="nav">
-    <a class="logo" href="../index.html">MA.</a>
-    <button class="menu" aria-label="Toggle navigation">Menu</button>
-    <div class="navlinks">
-      <a href="../about.html">About</a>
-      <a href="../experience.html">Experience</a>
-      <a href="../skills.html">Skills</a>
-      <a href="../projects.html">Projects</a>
-      <a href="../contact.html">Contact</a>
+<section class="project-hero">
+    <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+    <div class="project-kicker">CLOUD & DEVOPS BOOTCAMP PROJECT</div>
+
+    <h1>PortCheck</h1>
+    <h2>Network Port Scanner</h2>
+
+    <p class="project-lead">
+        A lightweight Linux networking tool that scans a target host
+        for open TCP ports and presents detected services with basic
+        risk guidance.
+    </p>
+
+    <div class="project-tags">
+        <span>Linux</span>
+        <span>Bash</span>
+        <span>Python</span>
+        <span>Flask</span>
+        <span>Netcat</span>
+        <span>Networking</span>
+        <span>DevSecOps</span>
     </div>
-  </nav>
-  <main><section class="project-hero"><a class="back" href="../projects.html">← All projects</a><p class="number">PROJECT 03</p><h1>Kubernetes Lab</h1><p class="lead">Hands-on practice managing containerised applications.</p><div class="tags"><span>Kubernetes</span><span>Minikube</span><span>AKS</span></div></section><section><div class="project-detail"><div><p class="number">OVERVIEW</p><h2>What I worked on</h2></div><div class="body-copy"><p>I used Kubernetes to practise Deployments, Pods, Services, replicas, health probes and rolling updates. I worked locally with Minikube and also explored how the same ideas apply when using Azure Kubernetes Service.</p><div class="shot">ADD PROJECT SCREENSHOT<br><small>assets/images/</small></div></div></div></section><section><div class="project-detail"><div><p class="number">REFLECTION</p><h2>What I learnt</h2></div><div class="body-copy"><p>Working with Kubernetes helped me understand the relationship between desired state, Deployments, ReplicaSets, Pods and Services. Seeing scaling and rolling updates happen in real time made the concepts easier to understand.</p><p class="placeholder">Before submitting: add your GitHub repository link, screenshots and any final results you want an employer to see.</p></div></div></section></main>
-  <footer><span>© 2026 Muhammad Aliff</span><span>Cloud • DevOps • Automation</span></footer>
-  <script src="../script.js"></script>
-</body>
-</html>
+</section>
+
+
+<section class="project-showcase">
+    <img
+        src="../assets/images/portcheck-scan.png"
+        alt="PortCheck network port scan results"
+    >
+</section>
+
+
+<section class="project-story">
+
+    <div class="section-label">01 / PROJECT</div>
+    <h2>From a Bash script to a simple network utility.</h2>
+
+    <p>
+        The original bootcamp task was to build a Bash script that
+        accepts an IP address and port and uses Netcat to check whether
+        the port is open.
+    </p>
+
+    <p>
+        I extended the task with a Flask interface that can check a
+        controlled set of TCP ports and present the results in a more
+        readable way.
+    </p>
+
+</section>
+
+
+<section class="project-process">
+
+    <div class="section-label">02 / HOW IT WORKS</div>
+    <h2>Simple underneath.</h2>
+
+    <div class="process-grid">
+
+        <article>
+            <span>01</span>
+            <h3>Validate</h3>
+            <p>
+                Validate the target and port values before they reach
+                the backend scanner.
+            </p>
+        </article>
+
+        <article>
+            <span>02</span>
+            <h3>Scan</h3>
+            <p>
+                A Bash script uses Netcat to test TCP connectivity
+                against the selected ports.
+            </p>
+        </article>
+
+        <article>
+            <span>03</span>
+            <h3>Analyse</h3>
+            <p>
+                Detected ports are mapped to common services and
+                basic exposure guidance.
+            </p>
+        </article>
+
+        <article>
+            <span>04</span>
+            <h3>Present</h3>
+            <p>
+                Flask returns the results through a clean web
+                interface.
+            </p>
+        </article>
+
+    </div>
+
+    <div class="flow-line">
+        <span>User</span>
+        <b>→</b>
+        <span>Flask</span>
+        <b>→</b>
+        <span>Bash</span>
+        <b>→</b>
+        <span>Netcat</span>
+        <b>→</b>
+        <span>Results</span>
+    </div>
+
+</section>
+
+
+<section class="project-evidence">
+
+    <div class="section-label">03 / VERIFICATION</div>
+    <h2>Checking the scanner against Ubuntu.</h2>
+
+    <p>
+        I compared the ports detected by PortCheck with the listening
+        TCP services reported directly by Ubuntu using
+        <code>ss</code>.
+    </p>
+
+    <div class="evidence-grid">
+
+        <figure>
+            <img
+                src="../assets/images/portcheck-scan.png"
+                alt="PortCheck scan showing open ports"
+            >
+            <figcaption>
+                PortCheck scan results
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img
+                src="../assets/images/portcheck-ss.png"
+                alt="Ubuntu listening TCP port verification"
+            >
+            <figcaption>
+                Ubuntu verification using ss
+            </figcaption>
+        </figure>
+
+    </div>
+
+</section>
+
+
+<section class="project-security">
+
+    <div class="section-label">04 / DEVSECOPS</div>
+    <h2>User input should never become a shell command.</h2>
+
+    <div class="security-grid">
+
+        <article>
+            <strong>01</strong>
+            <h3>Input Validation</h3>
+            <p>
+                Host and port values are checked before execution.
+            </p>
+        </article>
+
+        <article>
+            <strong>02</strong>
+            <h3>Controlled Ports</h3>
+            <p>
+                Port values are restricted to valid TCP port numbers.
+            </p>
+        </article>
+
+        <article>
+            <strong>03</strong>
+            <h3>Safe Execution</h3>
+            <p>
+                Values are passed as subprocess arguments instead of
+                constructing a shell command from user input.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="project-learning">
+
+    <div class="section-label">05 / TAKEAWAYS</div>
+
+    <h2>What I took away from the project.</h2>
+
+    <div class="learning-grid">
+        <span>Linux networking</span>
+        <span>Bash scripting</span>
+        <span>TCP ports & services</span>
+        <span>Netcat</span>
+        <span>Flask integration</span>
+        <span>Input sanitisation</span>
+        <span>Secure subprocess execution</span>
+        <span>Network troubleshooting</span>
+    </div>
+
+</section>
