@@ -19,6 +19,7 @@
 <body>
 
   <!-- NAVIGATION -->
+
   <nav class="nav">
 
     <a class="logo" href="../index.html">MA.</a>
@@ -100,11 +101,19 @@
           </p>
 
           <p>
-            I developed ScamCheck as my Cloud and DevOps capstone project
-            to provide a centralised web application where users can
-            analyse these different types of suspicious content from
-            one interface.
+            ScamCheck was developed as a Cloud and DevOps capstone
+            project to provide a centralised platform where different
+            types of suspicious content can be analysed through a
+            single web application.
           </p>
+
+          <p>
+            The project combines application development with cloud
+            infrastructure, security, CI/CD, monitoring and scalability,
+            providing an end-to-end implementation rather than focusing
+            only on the application itself.
+          </p>
+
 
           <figure class="project-shot">
 
@@ -139,18 +148,26 @@
 
         <div>
           <p class="number">SOLUTION</p>
-          <h2>What I built</h2>
+          <h2>The application</h2>
         </div>
 
         <div class="body-copy">
 
           <p>
-            ScamCheck is a Flask web application that combines several
+            ScamCheck is a Flask web application that combines multiple
             scanning methods into a single platform. Users can submit
             suspicious URLs, phone numbers or screenshots and receive
-            a risk assessment together with indicators and recommended
-            actions.
+            a risk assessment together with detected indicators and
+            recommended actions.
           </p>
+
+          <p>
+            Authentication and scan history provide users with access
+            to previous results, while administrative functionality
+            supports the management of application resources and
+            flagged information.
+          </p>
+
 
           <div class="security-points">
 
@@ -159,8 +176,8 @@
               <div>
                 <strong>URL Analysis</strong>
                 <p>
-                  Checks suspicious URLs using Google Safe Browsing
-                  and presents the result in a user-friendly format.
+                  Suspicious URLs are checked using Google Safe Browsing
+                  and the result is presented in a user-friendly format.
                 </p>
               </div>
             </div>
@@ -170,8 +187,8 @@
               <div>
                 <strong>Phone Number Analysis</strong>
                 <p>
-                  Checks phone numbers and provides information that
-                  can help users identify suspicious callers.
+                  Phone numbers can be checked for information that may
+                  help users identify potentially suspicious callers.
                 </p>
               </div>
             </div>
@@ -181,8 +198,8 @@
               <div>
                 <strong>Screenshot Analysis</strong>
                 <p>
-                  Uses AI-assisted analysis to identify potential scam
-                  indicators within uploaded screenshots.
+                  AI-assisted analysis examines uploaded screenshots for
+                  potential scam indicators and suspicious content.
                 </p>
               </div>
             </div>
@@ -240,23 +257,30 @@
         <div class="body-copy">
 
           <p>
-            I designed the application primarily around managed Azure
-            services so that I could focus on application development
-            and deployment without having to manage the underlying
-            operating systems and servers.
+            The cloud architecture is based primarily on managed Azure
+            platform services, reducing the need to manage underlying
+            servers and operating systems while allowing greater focus
+            on the application and its deployment.
           </p>
 
           <p>
             The Flask application runs as a Docker container on Azure
-            App Service. Application data is stored in Azure Database
-            for PostgreSQL, while Azure Key Vault is used to securely
-            manage application secrets and third-party API credentials.
+            App Service. Persistent application data is stored in Azure
+            Database for PostgreSQL Flexible Server, while Azure Key
+            Vault provides secure storage for application secrets and
+            third-party API credentials.
           </p>
 
           <p>
             Azure Monitor, Application Insights and Log Analytics
-            provide application telemetry and monitoring, while Azure
-            DevOps handles the automated CI/CD workflow.
+            provide telemetry and operational visibility, while Azure
+            DevOps provides source control and CI/CD automation.
+          </p>
+
+          <p>
+            Together, these services provide the hosting, database,
+            security, deployment and monitoring capabilities required
+            to operate the application in Azure.
           </p>
 
 
@@ -299,22 +323,23 @@
         <div class="body-copy">
 
           <p>
-            I implemented a CI/CD pipeline using Azure DevOps to make
-            application releases more consistent and reduce the number
-            of manual deployment steps.
+            Azure DevOps provides the CI/CD workflow for application
+            releases, replacing several manual deployment steps with
+            a consistent and repeatable process.
           </p>
 
           <p>
-            When a new version is released, the pipeline runs the
-            automated tests, builds a Docker image and pushes the image
-            to Docker Hub. The new version is then deployed to the
-            App Service staging slot.
+            Each release begins with automated testing. Following a
+            successful test run, the pipeline builds a new Docker image
+            and publishes it to Docker Hub before deploying the new
+            version to the Azure App Service staging slot.
           </p>
 
           <p>
-            A health check verifies that the application is responding
-            successfully before the staging slot is swapped into
-            production.
+            The staging deployment is validated through the application's
+            health endpoint. Once the health check confirms that the new
+            version is responding successfully, the staging slot is
+            swapped into production.
           </p>
 
 
@@ -385,7 +410,7 @@
 
 
     <!-- =====================================================
-         DEPLOYMENT STRATEGY
+         DEPLOYMENT
          ===================================================== -->
 
     <section>
@@ -400,20 +425,23 @@
         <div class="body-copy">
 
           <p>
-            Instead of deploying a new version directly to production,
-            I used an Azure App Service deployment slot as the staging
-            environment.
+            New application versions are deployed to an Azure App
+            Service deployment slot rather than being released directly
+            to the production environment.
           </p>
 
           <p>
-            The new container is started in staging and checked through
-            the application's health endpoint. Once the application is
-            healthy, the staging and production slots are swapped.
+            The new container is started in the staging slot and
+            validated through the application's health endpoint. Once
+            the application is confirmed to be healthy, the staging
+            and production slots are swapped.
           </p>
 
           <p>
-            This approach provides an additional validation step before
-            the new version receives production traffic.
+            This deployment strategy introduces a validation stage
+            before the new application version begins receiving
+            production traffic, reducing the risk of releasing an
+            unhealthy deployment directly to users.
           </p>
 
 
@@ -456,22 +484,22 @@
         <div class="body-copy">
 
           <p>
-            I avoided storing sensitive API credentials directly in
-            the source code by using Azure Key Vault for secret
-            management.
+            Sensitive application secrets and third-party API
+            credentials are stored in Azure Key Vault rather than
+            directly in the application source code.
           </p>
 
           <p>
-            Azure App Service uses a Managed Identity, giving the
-            application its own identity within Azure without requiring
-            separate Azure credentials to be stored in the application.
+            Azure App Service uses a Managed Identity, providing the
+            application with its own identity in Azure without requiring
+            separate Azure credentials to be embedded in the application.
           </p>
 
           <p>
-            Role-Based Access Control determines what that identity can
-            access. This follows the principle of least privilege by
-            granting the application only the permissions required for
-            its operation.
+            Role-Based Access Control (RBAC) determines what the Managed
+            Identity is permitted to access. Permissions can therefore
+            be limited to those required by the application, following
+            the principle of least privilege.
           </p>
 
 
@@ -533,16 +561,22 @@
         <div class="body-copy">
 
           <p>
-            During development I initially worked with local database
-            options before migrating the application data to Azure
-            Database for PostgreSQL Flexible Server.
+            Local database options supported the initial development
+            stage before application data was migrated to Azure Database
+            for PostgreSQL Flexible Server.
           </p>
 
           <p>
-            PostgreSQL stores application data including users, scan
-            history, bulletins and flagged phone number information.
-            Using a managed database also separates persistent
-            application data from the App Service container.
+            PostgreSQL provides persistent storage for application data,
+            including user accounts, scan history, bulletins and flagged
+            phone number information.
+          </p>
+
+          <p>
+            Moving the database to a managed Azure service separates
+            persistent application data from the App Service container,
+            allowing the application container to be replaced or
+            redeployed without relying on local container storage.
           </p>
 
         </div>
@@ -569,14 +603,21 @@
         <div class="body-copy">
 
           <p>
-            I integrated Application Insights and Log Analytics to
-            collect telemetry from the deployed application.
+            Application Insights and Log Analytics provide telemetry
+            from the deployed application and supporting Azure
+            environment.
           </p>
 
           <p>
-            Monitoring data can then be visualised through dashboards,
-            allowing application behaviour and infrastructure metrics
-            to be observed from a central location.
+            Monitoring data can be visualised through dashboards,
+            providing a central view of application behaviour and
+            infrastructure metrics during normal operation and testing.
+          </p>
+
+          <p>
+            This provides operational visibility beyond simply checking
+            whether the website is accessible, making it possible to
+            observe how the deployed environment behaves over time.
           </p>
 
 
@@ -619,16 +660,23 @@
         <div class="body-copy">
 
           <p>
-            I configured Azure App Service autoscaling and performed
-            load testing to observe how the application responded as
-            demand increased.
+            Azure App Service autoscaling was configured and tested
+            under simulated application load to observe how the
+            environment responded as demand increased.
           </p>
 
           <p>
             During the demonstration, the environment was configured
-            to scale between two and five instances. Under simulated
-            load, the application scaled out progressively and later
-            scaled back in as demand decreased.
+            with a minimum of two and a maximum of five instances.
+            As load increased, additional instances were introduced
+            progressively before scaling back in when demand decreased.
+          </p>
+
+          <p>
+            The exercise demonstrated how application capacity can be
+            adjusted dynamically in response to changing workload
+            conditions rather than relying on a fixed number of
+            instances.
           </p>
 
 
@@ -671,15 +719,22 @@
         <div class="body-copy">
 
           <p>
-            I developed automated tests covering important application
-            functionality including page access, authentication,
-            administration and scanner workflows.
+            Automated testing covers important application functionality,
+            including page access, authentication, administration and
+            scanner workflows.
           </p>
 
           <p>
-            The final test suite contained 24 automated tests. These
-            tests are executed by the CI/CD pipeline before a new
-            Docker image proceeds through the deployment process.
+            The final test suite contains 24 automated tests. These are
+            executed by the CI/CD pipeline before a new Docker image
+            proceeds through the deployment process.
+          </p>
+
+          <p>
+            Integrating testing into the pipeline provides an automated
+            validation stage and helps identify application issues before
+            a new version reaches the staging and production deployment
+            stages.
           </p>
 
 
@@ -719,10 +774,18 @@
 
         <div>
           <p class="number">OUTCOME</p>
-          <h2>What I delivered</h2>
+          <h2>Project outcome</h2>
         </div>
 
         <div class="body-copy">
+
+          <p>
+            ScamCheck developed from a Flask application into a
+            containerised cloud solution incorporating managed Azure
+            services, automated deployment, monitoring, security
+            controls and scalability.
+          </p>
+
 
           <div class="security-points">
 
@@ -731,7 +794,8 @@
               <div>
                 <strong>Containerised Application</strong>
                 <p>
-                  Flask application packaged and deployed using Docker.
+                  Flask application packaged as a Docker container and
+                  deployed through Azure App Service.
                 </p>
               </div>
             </div>
@@ -741,8 +805,9 @@
               <div>
                 <strong>Automated CI/CD</strong>
                 <p>
-                  Testing, Docker builds, staging deployment and
-                  production releases automated through Azure DevOps.
+                  Automated testing, Docker builds, staging deployment,
+                  health validation and production releases through
+                  Azure DevOps.
                 </p>
               </div>
             </div>
@@ -752,8 +817,8 @@
               <div>
                 <strong>Managed Cloud Services</strong>
                 <p>
-                  App Service, PostgreSQL, Key Vault and monitoring
-                  services integrated into the solution.
+                  Azure App Service, PostgreSQL, Key Vault and monitoring
+                  services integrated into the cloud solution.
                 </p>
               </div>
             </div>
@@ -763,8 +828,8 @@
               <div>
                 <strong>Operational Features</strong>
                 <p>
-                  Health checks, deployment slots, monitoring and
-                  autoscaling incorporated into the deployment.
+                  Deployment slots, health checks, application monitoring
+                  and autoscaling incorporated into the deployment.
                 </p>
               </div>
             </div>
@@ -795,25 +860,25 @@
         <div class="body-copy">
 
           <p>
-            ScamCheck gave me practical experience connecting application
-            development with cloud infrastructure and DevOps practices.
-            Rather than focusing only on building the Flask application,
-            I had to consider how the application would be deployed,
+            ScamCheck provided practical experience connecting
+            application development with cloud infrastructure and
+            DevOps practices. The project extended beyond building the
+            Flask application to include how it would be deployed,
             secured, monitored and updated.
           </p>
 
           <p>
             Troubleshooting database connectivity, application
             configuration, deployment health checks and CI/CD issues
-            also helped me become more systematic when investigating
+            also reinforced a more systematic approach to investigating
             problems across different layers of an application.
           </p>
 
           <p>
-            The project helped me better understand how managed cloud
-            services, containers, CI/CD, monitoring and security
-            controls work together as part of a complete application
-            deployment.
+            The overall project strengthened my understanding of how
+            managed cloud services, containers, CI/CD, monitoring,
+            security controls and application development work together
+            as part of an end-to-end cloud deployment.
           </p>
 
         </div>
@@ -825,6 +890,9 @@
 
   </main>
 
+
+
+  <!-- FOOTER -->
 
   <footer>
 
