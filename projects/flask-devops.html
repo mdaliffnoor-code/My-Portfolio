@@ -83,14 +83,21 @@
 
     <section>
 
-      <div class="project-detail">
+      <div class="project-section-heading">
 
-        <div>
-          <p class="number">OVERVIEW</p>
-          <h2>What I worked on</h2>
-        </div>
+        <p class="number">OVERVIEW</p>
 
-        <div class="body-copy">
+        <h2>What I worked on</h2>
+
+      </div>
+
+
+      <div class="project-overview-grid">
+
+
+        <!-- LEFT: TEXT -->
+
+        <div class="project-overview-text">
 
           <p>
             This project gave me hands-on experience building a complete
@@ -110,24 +117,46 @@
             process, and Kubernetes to run and manage the application.
           </p>
 
+          <p>
+            The Flask application used for this project is also available
+            as a live deployment.
+          </p>
 
-          <!-- FLASK APPLICATION SCREENSHOT -->
 
-          <figure class="project-shot">
+          <!-- LIVE APPLICATION BUTTON -->
 
-            <img
-              src="../assets/images/flask-app.png"
-              alt="Flask application"
-              class="project-img"
+          <div class="project-actions">
+
+            <a
+              href="https://aliff85.pythonanywhere.com/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-button"
             >
+              View Live Application ↗
+            </a>
 
-            <figcaption>
-              Flask application used for the CI/CD deployment exercise.
-            </figcaption>
-
-          </figure>
+          </div>
 
         </div>
+
+
+        <!-- RIGHT: IMAGE -->
+
+        <figure class="project-shot overview-shot">
+
+          <img
+            src="../assets/images/flask-app.png"
+            alt="Flask application used for the CI/CD project"
+            class="project-img"
+          >
+
+          <figcaption>
+            Flask application used for the CI/CD deployment exercise.
+          </figcaption>
+
+        </figure>
+
 
       </div>
 
@@ -329,12 +358,10 @@
             <code>kubectl get deployment</code>
           </div>
 
-
           <div class="command-box">
             <span>$</span>
             <code>kubectl get pods</code>
           </div>
-
 
           <div class="command-box">
             <span>$</span>
@@ -407,7 +434,7 @@
           </p>
 
 
-          <!-- AZURE DEVOPS PIPELINE SCREENSHOT -->
+          <!-- PIPELINE SCREENSHOT -->
 
           <figure class="project-shot">
 
@@ -517,7 +544,7 @@
 
 
     <!-- =====================================================
-         DEMONSTRATION VIDEO
+         DEMONSTRATION
          ===================================================== -->
 
     <section>
@@ -549,7 +576,7 @@
           </p>
 
 
-          <!-- CLASS DEMONSTRATION VIDEO -->
+          <!-- VIDEO -->
 
           <div class="project-video">
 
@@ -634,16 +661,13 @@
   </main>
 
 
-
   <!-- =====================================================
        FOOTER
        ===================================================== -->
 
   <footer>
 
-    <span>
-      © 2026 Muhammad Aliff
-    </span>
+    <span>© 2026 Muhammad Aliff</span>
 
     <span>
       Cloud • DevOps • Automation
