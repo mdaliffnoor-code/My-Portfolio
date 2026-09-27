@@ -1,16 +1,32 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>ScamCheck | Muhammad Aliff</title>
-  <meta name="description" content="Muhammad Aliff's Cloud and DevOps portfolio.">
+
+  <meta
+    name="description"
+    content="ScamCheck cloud-based scam detection application by Muhammad Aliff."
+  >
+
   <link rel="stylesheet" href="../style.css">
 </head>
+
+
 <body>
+
+  <!-- NAVIGATION -->
   <nav class="nav">
+
     <a class="logo" href="../index.html">MA.</a>
-    <button class="menu" aria-label="Toggle navigation">Menu</button>
+
+    <button class="menu" aria-label="Toggle navigation">
+      Menu
+    </button>
+
     <div class="navlinks">
       <a href="../about.html">About</a>
       <a href="../experience.html">Experience</a>
@@ -18,9 +34,813 @@
       <a href="../projects.html">Projects</a>
       <a href="../contact.html">Contact</a>
     </div>
+
   </nav>
-  <main><section class="project-hero"><a class="back" href="../projects.html">← All projects</a><p class="number">PROJECT 01</p><h1>ScamCheck</h1><p class="lead">A web application designed to help users assess possible scam risks.</p><div class="tags"><span>Python</span><span>Flask</span><span>Azure</span><span>SQL</span></div></section><section><div class="project-detail"><div><p class="number">OVERVIEW</p><h2>What I worked on</h2></div><div class="body-copy"><p>I worked on a Flask-based application that brings different scam-checking functions into one place. The project includes user accounts, scan history and cloud services, and gave me a chance to connect application development with Azure-managed resources.</p><div class="shot">ADD PROJECT SCREENSHOT<br><small>assets/images/</small></div></div></div></section><section><div class="project-detail"><div><p class="number">REFLECTION</p><h2>What I learnt</h2></div><div class="body-copy"><p>This project helped me understand how the application, database and cloud services need to work together. It also gave me more practice troubleshooting configuration and deployment issues rather than only writing application code.</p><p class="placeholder">Before submitting: add your GitHub repository link, screenshots and any final results you want an employer to see.</p></div></div></section></main>
-  <footer><span>© 2026 Muhammad Aliff</span><span>Cloud • DevOps • Automation</span></footer>
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="project-hero">
+
+      <a class="back" href="../projects.html">
+        ← All projects
+      </a>
+
+      <p class="number">PROJECT 01 / CAPSTONE</p>
+
+      <h1>ScamCheck</h1>
+
+      <p class="lead">
+        A cloud-based web application that helps users assess
+        suspicious URLs, phone numbers and screenshots for
+        potential scam indicators.
+      </p>
+
+      <div class="tags">
+        <span>Azure</span>
+        <span>Python</span>
+        <span>Flask</span>
+        <span>Docker</span>
+        <span>PostgreSQL</span>
+        <span>Azure DevOps</span>
+        <span>CI/CD</span>
+        <span>Monitoring</span>
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         OVERVIEW
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">OVERVIEW</p>
+          <h2>The problem</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            Scam messages can arrive through different channels and
+            often contain suspicious links, phone numbers or screenshots
+            of conversations. Checking each of these separately can make
+            it difficult for users to quickly assess potential warning
+            signs.
+          </p>
+
+          <p>
+            I developed ScamCheck as my Cloud and DevOps capstone project
+            to provide a centralised web application where users can
+            analyse these different types of suspicious content from
+            one interface.
+          </p>
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/scamcheck-main.png"
+              alt="ScamCheck web application"
+              class="project-img"
+            >
+
+            <figcaption>
+              ScamCheck provides a central interface for checking
+              suspicious URLs, phone numbers and screenshots.
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOLUTION
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">SOLUTION</p>
+          <h2>What I built</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            ScamCheck is a Flask web application that combines several
+            scanning methods into a single platform. Users can submit
+            suspicious URLs, phone numbers or screenshots and receive
+            a risk assessment together with indicators and recommended
+            actions.
+          </p>
+
+          <div class="security-points">
+
+            <div class="security-point">
+              <span>01</span>
+              <div>
+                <strong>URL Analysis</strong>
+                <p>
+                  Checks suspicious URLs using Google Safe Browsing
+                  and presents the result in a user-friendly format.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-point">
+              <span>02</span>
+              <div>
+                <strong>Phone Number Analysis</strong>
+                <p>
+                  Checks phone numbers and provides information that
+                  can help users identify suspicious callers.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-point">
+              <span>03</span>
+              <div>
+                <strong>Screenshot Analysis</strong>
+                <p>
+                  Uses AI-assisted analysis to identify potential scam
+                  indicators within uploaded screenshots.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-point">
+              <span>04</span>
+              <div>
+                <strong>Scan History</strong>
+                <p>
+                  Authenticated users can review their previous scan
+                  activity and results.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/scamcheck-scan.png"
+              alt="ScamCheck scan results"
+              class="project-img"
+            >
+
+            <figcaption>
+              Scan results provide a risk level, detected indicators
+              and recommended actions.
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ARCHITECTURE
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">ARCHITECTURE</p>
+          <h2>Designing the cloud solution</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            I designed the application primarily around managed Azure
+            services so that I could focus on application development
+            and deployment without having to manage the underlying
+            operating systems and servers.
+          </p>
+
+          <p>
+            The Flask application runs as a Docker container on Azure
+            App Service. Application data is stored in Azure Database
+            for PostgreSQL, while Azure Key Vault is used to securely
+            manage application secrets and third-party API credentials.
+          </p>
+
+          <p>
+            Azure Monitor, Application Insights and Log Analytics
+            provide application telemetry and monitoring, while Azure
+            DevOps handles the automated CI/CD workflow.
+          </p>
+
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/scamcheck-architecture.png"
+              alt="ScamCheck Azure architecture diagram"
+              class="project-img"
+            >
+
+            <figcaption>
+              Final ScamCheck cloud architecture based primarily on
+              managed Azure platform services.
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CI/CD
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">CI/CD</p>
+          <h2>Automating deployment</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            I implemented a CI/CD pipeline using Azure DevOps to make
+            application releases more consistent and reduce the number
+            of manual deployment steps.
+          </p>
+
+          <p>
+            When a new version is released, the pipeline runs the
+            automated tests, builds a Docker image and pushes the image
+            to Docker Hub. The new version is then deployed to the
+            App Service staging slot.
+          </p>
+
+          <p>
+            A health check verifies that the application is responding
+            successfully before the staging slot is swapped into
+            production.
+          </p>
+
+
+          <div class="portcheck-flow">
+
+            <div class="flow-item">
+              <span>01</span>
+              <strong>Code</strong>
+              <small>Azure Repos</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>02</span>
+              <strong>Test</strong>
+              <small>Pytest</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>03</span>
+              <strong>Build</strong>
+              <small>Docker</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>04</span>
+              <strong>Staging</strong>
+              <small>Health check</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>05</span>
+              <strong>Production</strong>
+              <small>Slot swap</small>
+            </div>
+
+          </div>
+
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/scamcheck-pipeline.png"
+              alt="ScamCheck Azure DevOps CI/CD pipeline"
+              class="project-img"
+            >
+
+            <figcaption>
+              Azure DevOps pipeline automating testing, container
+              builds and application deployment.
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DEPLOYMENT STRATEGY
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">DEPLOYMENT</p>
+          <h2>Staging before production</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            Instead of deploying a new version directly to production,
+            I used an Azure App Service deployment slot as the staging
+            environment.
+          </p>
+
+          <p>
+            The new container is started in staging and checked through
+            the application's health endpoint. Once the application is
+            healthy, the staging and production slots are swapped.
+          </p>
+
+          <p>
+            This approach provides an additional validation step before
+            the new version receives production traffic.
+          </p>
+
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/scamcheck-deployment.png"
+              alt="ScamCheck staging and production deployment workflow"
+              class="project-img"
+            >
+
+            <figcaption>
+              New versions are validated in the staging slot before
+              being swapped into production.
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECURITY
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">SECURITY</p>
+          <h2>Protecting application secrets</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            I avoided storing sensitive API credentials directly in
+            the source code by using Azure Key Vault for secret
+            management.
+          </p>
+
+          <p>
+            Azure App Service uses a Managed Identity, giving the
+            application its own identity within Azure without requiring
+            separate Azure credentials to be stored in the application.
+          </p>
+
+          <p>
+            Role-Based Access Control determines what that identity can
+            access. This follows the principle of least privilege by
+            granting the application only the permissions required for
+            its operation.
+          </p>
+
+
+          <div class="portcheck-flow">
+
+            <div class="flow-item">
+              <span>01</span>
+              <strong>App Service</strong>
+              <small>Application</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>02</span>
+              <strong>Managed Identity</strong>
+              <small>Identity</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>03</span>
+              <strong>RBAC</strong>
+              <small>Permission</small>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-item">
+              <span>04</span>
+              <strong>Key Vault</strong>
+              <small>Secrets</small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DATABASE
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">DATABASE</p>
+          <h2>Moving to managed PostgreSQL</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            During development I initially worked with local database
+            options before migrating the application data to Azure
+            Database for PostgreSQL Flexible Server.
+          </p>
+
+          <p>
+            PostgreSQL stores application data including users, scan
+            history, bulletins and flagged phone number information.
+            Using a managed database also separates persistent
+            application data from the App Service container.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MONITORING
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">MONITORING</p>
+          <h2>Understanding application health</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            I integrated Application Insights and Log Analytics to
+            collect telemetry from the deployed application.
+          </p>
+
+          <p>
+            Monitoring data can then be visualised through dashboards,
+            allowing application behaviour and infrastructure metrics
+            to be observed from a central location.
+          </p>
+
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/scamcheck-monitoring.png"
+              alt="ScamCheck monitoring dashboard"
+              class="project-img"
+            >
+
+            <figcaption>
+              Monitoring dashboard used to observe application and
+              infrastructure telemetry.
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SCALABILITY
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">SCALABILITY</p>
+          <h2>Testing autoscaling</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            I configured Azure App Service autoscaling and performed
+            load testing to observe how the application responded as
+            demand increased.
+          </p>
+
+          <p>
+            During the demonstration, the environment was configured
+            to scale between two and five instances. Under simulated
+            load, the application scaled out progressively and later
+            scaled back in as demand decreased.
+          </p>
+
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/scamcheck-autoscaling.png"
+              alt="ScamCheck Azure App Service autoscaling"
+              class="project-img"
+            >
+
+            <figcaption>
+              Autoscaling demonstration showing the application
+              increasing its available instances under simulated load.
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TESTING
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">TESTING</p>
+          <h2>Building confidence before release</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            I developed automated tests covering important application
+            functionality including page access, authentication,
+            administration and scanner workflows.
+          </p>
+
+          <p>
+            The final test suite contained 24 automated tests. These
+            tests are executed by the CI/CD pipeline before a new
+            Docker image proceeds through the deployment process.
+          </p>
+
+
+          <!-- OPTIONAL SCREENSHOT
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/scamcheck-tests.png"
+              alt="ScamCheck automated test results"
+              class="project-img"
+            >
+
+            <figcaption>
+              Automated application tests executed before deployment.
+            </figcaption>
+
+          </figure>
+
+          -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         OUTCOME
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">OUTCOME</p>
+          <h2>What I delivered</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <div class="security-points">
+
+            <div class="security-point">
+              <span>01</span>
+              <div>
+                <strong>Containerised Application</strong>
+                <p>
+                  Flask application packaged and deployed using Docker.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-point">
+              <span>02</span>
+              <div>
+                <strong>Automated CI/CD</strong>
+                <p>
+                  Testing, Docker builds, staging deployment and
+                  production releases automated through Azure DevOps.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-point">
+              <span>03</span>
+              <div>
+                <strong>Managed Cloud Services</strong>
+                <p>
+                  App Service, PostgreSQL, Key Vault and monitoring
+                  services integrated into the solution.
+                </p>
+              </div>
+            </div>
+
+            <div class="security-point">
+              <span>04</span>
+              <div>
+                <strong>Operational Features</strong>
+                <p>
+                  Health checks, deployment slots, monitoring and
+                  autoscaling incorporated into the deployment.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REFLECTION
+         ===================================================== -->
+
+    <section>
+
+      <div class="project-detail">
+
+        <div>
+          <p class="number">REFLECTION</p>
+          <h2>What I learnt</h2>
+        </div>
+
+        <div class="body-copy">
+
+          <p>
+            ScamCheck gave me practical experience connecting application
+            development with cloud infrastructure and DevOps practices.
+            Rather than focusing only on building the Flask application,
+            I had to consider how the application would be deployed,
+            secured, monitored and updated.
+          </p>
+
+          <p>
+            Troubleshooting database connectivity, application
+            configuration, deployment health checks and CI/CD issues
+            also helped me become more systematic when investigating
+            problems across different layers of an application.
+          </p>
+
+          <p>
+            The project helped me better understand how managed cloud
+            services, containers, CI/CD, monitoring and security
+            controls work together as part of a complete application
+            deployment.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <footer>
+
+    <span>
+      © 2026 Muhammad Aliff
+    </span>
+
+    <span>
+      Cloud • DevOps • Automation
+    </span>
+
+  </footer>
+
+
   <script src="../script.js"></script>
+
 </body>
+
 </html>
