@@ -73,19 +73,6 @@
         <span>CI/CD</span>
       </div>
 
-      <div class="project-actions">
-
-        <a
-          href="https://aliff85.pythonanywhere.com/portfolio"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="project-button"
-        >
-          View Live Application ↗
-        </a>
-
-      </div>
-
     </section>
 
 
@@ -94,20 +81,20 @@
          OVERVIEW
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">OVERVIEW</p>
-        <h2>What I worked on</h2>
-      </div>
+      <div class="project-detail">
+
+        <div>
+
+          <p class="number">OVERVIEW</p>
+
+          <h2>What I worked on</h2>
+
+        </div>
 
 
-      <div class="project-content-grid">
-
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
+        <div class="body-copy">
 
           <p>
             This project gave me hands-on experience building a complete
@@ -132,6 +119,9 @@
             as a live deployment.
           </p>
 
+
+          <!-- LIVE APPLICATION -->
+
           <div class="project-actions">
 
             <a
@@ -145,25 +135,24 @@
 
           </div>
 
+
+          <!-- FLASK APPLICATION SCREENSHOT -->
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/flask-app.png"
+              alt="Flask application"
+              class="project-img"
+            >
+
+            <figcaption>
+              Flask application used for the CI/CD deployment exercise.
+            </figcaption>
+
+          </figure>
+
         </div>
-
-
-        <!-- RIGHT -->
-
-        <figure class="project-media">
-
-          <img
-            src="../assets/images/flask-app.png"
-            alt="Flask application"
-            class="project-img"
-          >
-
-          <figcaption>
-            Flask application used for the CI/CD deployment exercise.
-          </figcaption>
-
-        </figure>
-
 
       </div>
 
@@ -175,85 +164,52 @@
          WORKFLOW
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">WORKFLOW</p>
-        <h2>From code to deployment</h2>
-      </div>
+      <div class="project-detail">
 
+        <div>
 
-      <div class="project-content-grid">
+          <p class="number">WORKFLOW</p>
 
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
-
-          <p>
-            The workflow begins when application changes are pushed to
-            Azure Repos.
-          </p>
-
-          <p>
-            The Azure DevOps pipeline then runs the automated tests,
-            builds a new Docker image and pushes the image to Docker Hub.
-          </p>
-
-          <p>
-            The deployment process updates the Kubernetes workload to
-            use the newly built image.
-          </p>
-
-          <div class="workflow-steps">
-
-            <div>
-              <span>01</span>
-              <p><strong>Push</strong><br>Code to Azure Repos</p>
-            </div>
-
-            <div>
-              <span>02</span>
-              <p><strong>Test</strong><br>Run automated tests</p>
-            </div>
-
-            <div>
-              <span>03</span>
-              <p><strong>Build</strong><br>Create Docker image</p>
-            </div>
-
-            <div>
-              <span>04</span>
-              <p><strong>Push</strong><br>Store image in Docker Hub</p>
-            </div>
-
-            <div>
-              <span>05</span>
-              <p><strong>Deploy</strong><br>Update Kubernetes</p>
-            </div>
-
-          </div>
+          <h2>From code to deployment</h2>
 
         </div>
 
 
-        <!-- RIGHT -->
+        <div class="body-copy">
 
-        <figure class="project-media">
+          <p>
+            The workflow begins when application changes are pushed to
+            Azure Repos. The Azure DevOps pipeline then performs the
+            required build and deployment steps automatically.
+          </p>
 
-          <img
-            src="../assets/images/flask-cicd-workflow.png"
-            alt="Flask CI/CD workflow diagram"
-            class="project-img"
-          >
+          <p>
+            The pipeline runs the automated tests, builds a Docker image,
+            pushes the image to Docker Hub and updates the Kubernetes
+            deployment with the new application version.
+          </p>
 
-          <figcaption>
-            End-to-end workflow from source control through
-            containerisation and Kubernetes deployment.
-          </figcaption>
 
-        </figure>
+          <!-- CI/CD WORKFLOW DIAGRAM -->
 
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/flask-cicd-workflow.png"
+              alt="Flask CI/CD workflow diagram"
+              class="project-img"
+            >
+
+            <figcaption>
+              End-to-end CI/CD workflow from source control through
+              containerisation and Kubernetes deployment.
+            </figcaption>
+
+          </figure>
+
+        </div>
 
       </div>
 
@@ -265,81 +221,38 @@
          SOURCE CONTROL
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">SOURCE CONTROL</p>
-        <h2>Managing application code</h2>
-      </div>
+      <div class="project-detail">
+
+        <div>
+
+          <p class="number">SOURCE CONTROL</p>
+
+          <h2>Managing application code</h2>
+
+        </div>
 
 
-      <div class="project-content-grid">
-
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
+        <div class="body-copy">
 
           <p>
-            I created an Azure DevOps project and used Azure Repos
-            for version control of the Flask application.
+            I created an Azure DevOps project and used Azure Repos for
+            version control of the Flask application.
           </p>
 
           <p>
             I pushed the application to Azure Repos through an SSH
-            connection between my local environment and Azure DevOps.
+            connection. This provided a secure connection between my
+            local development environment and the remote Git repository.
           </p>
 
           <p>
-            This allowed changes made locally to be tracked through
-            Git and pushed to the remote repository.
-          </p>
-
-          <p>
-            The repository then acts as the starting point for the
-            automated CI/CD workflow.
-          </p>
-
-          <div class="command-box">
-            <span>$</span>
-            <code>git push</code>
-          </div>
-
-        </div>
-
-
-        <!-- RIGHT -->
-
-        <div class="project-info-card">
-
-          <span class="info-number">01</span>
-
-          <h3>Local Development</h3>
-
-          <p>
-            Application changes are developed and tested locally.
-          </p>
-
-          <span class="info-arrow">↓</span>
-
-          <h3>Git + SSH</h3>
-
-          <p>
-            Changes are committed and securely pushed to the
-            remote repository.
-          </p>
-
-          <span class="info-arrow">↓</span>
-
-          <h3>Azure Repos</h3>
-
-          <p>
-            Source code is stored and version controlled in
-            Azure DevOps.
+            Using Git allowed application changes to be tracked and
+            provided the starting point for the automated CI/CD workflow.
           </p>
 
         </div>
-
 
       </div>
 
@@ -351,20 +264,20 @@
          CONTAINERISATION
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">CONTAINERISATION</p>
-        <h2>Packaging with Docker</h2>
-      </div>
+      <div class="project-detail">
+
+        <div>
+
+          <p class="number">CONTAINERISATION</p>
+
+          <h2>Packaging with Docker</h2>
+
+        </div>
 
 
-      <div class="project-content-grid">
-
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
+        <div class="body-copy">
 
           <p>
             I containerised the Flask application using Docker so that
@@ -375,40 +288,34 @@
           <p>
             The Dockerfile defines how the application image is built,
             including the base environment, Python dependencies,
-            application files and the command used to start the
+            application files and the command used to start the Flask
             application.
           </p>
 
           <p>
-            After the image is successfully built, it is pushed to
-            Docker Hub so that Kubernetes can retrieve and deploy it.
+            The resulting image is pushed to Docker Hub, where it can
+            then be pulled and deployed by Kubernetes.
           </p>
 
-          <div class="command-box">
-            <span>$</span>
-            <code>docker build</code>
-          </div>
+
+          <!-- DOCKER SCREENSHOT -->
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/flask-docker.png"
+              alt="Building the Flask Docker image"
+              class="project-img"
+            >
+
+            <figcaption>
+              Building and testing the containerised Flask application
+              using Docker.
+            </figcaption>
+
+          </figure>
 
         </div>
-
-
-        <!-- RIGHT -->
-
-        <figure class="project-media">
-
-          <img
-            src="../assets/images/flask-docker.png"
-            alt="Docker containerisation of Flask application"
-            class="project-img"
-          >
-
-          <figcaption>
-            Building and preparing the Flask application as a
-            Docker container image.
-          </figcaption>
-
-        </figure>
-
 
       </div>
 
@@ -420,20 +327,20 @@
          KUBERNETES
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">KUBERNETES</p>
-        <h2>Running the application</h2>
-      </div>
+      <div class="project-detail">
+
+        <div>
+
+          <p class="number">KUBERNETES</p>
+
+          <h2>Running the application</h2>
+
+        </div>
 
 
-      <div class="project-content-grid">
-
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
+        <div class="body-copy">
 
           <p>
             I created Kubernetes manifests to define how the
@@ -446,13 +353,14 @@
           </p>
 
           <p>
-            I also created a Service manifest. The Service defines a
-            stable network endpoint and directs incoming traffic to
-            the Pods even if individual Pods are replaced.
+            I also created a Service manifest, which defines a stable
+            network endpoint and directs incoming traffic to the Pods,
+            even if those Pods change.
           </p>
 
           <p>
-            I verified each Kubernetes component from the command line.
+            I verified the deployment using Kubernetes commands to
+            check the Deployment, Pods and Service.
           </p>
 
 
@@ -471,26 +379,25 @@
             <code>kubectl get services</code>
           </div>
 
+
+          <!-- KUBERNETES SCREENSHOT -->
+
+          <figure class="project-shot">
+
+            <img
+              src="../assets/images/flask-kubernetes.png"
+              alt="Kubernetes deployment verification"
+              class="project-img"
+            >
+
+            <figcaption>
+              Verifying the Deployment, Pod and Service running
+              the Flask application.
+            </figcaption>
+
+          </figure>
+
         </div>
-
-
-        <!-- RIGHT -->
-
-        <figure class="project-media">
-
-          <img
-            src="../assets/images/flask-kubernetes.png"
-            alt="Kubernetes deployment verification"
-            class="project-img"
-          >
-
-          <figcaption>
-            Verifying the Deployment, Pod and Service running
-            the Flask application.
-          </figcaption>
-
-        </figure>
-
 
       </div>
 
@@ -502,20 +409,20 @@
          CI/CD
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">CI/CD</p>
-        <h2>Automating the workflow</h2>
-      </div>
+      <div class="project-detail">
+
+        <div>
+
+          <p class="number">CI/CD</p>
+
+          <h2>Automating the workflow</h2>
+
+        </div>
 
 
-      <div class="project-content-grid">
-
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
+        <div class="body-copy">
 
           <p>
             I created an Azure DevOps pipeline to automate a deployment
@@ -523,56 +430,42 @@
           </p>
 
           <p>
-            When a change is pushed, the pipeline first runs the
-            automated tests.
+            When a change is pushed, the pipeline runs the automated
+            tests before continuing with the deployment process. This
+            provides a quality check before a new container image is built.
           </p>
 
           <p>
-            After the tests pass, a new Docker image is built and
-            pushed to Docker Hub.
+            After the tests pass, the pipeline builds a new Docker image
+            and pushes it to Docker Hub. The Kubernetes deployment is
+            then updated to use the newly built image.
           </p>
 
           <p>
-            The Kubernetes deployment is then updated to use the
-            newly built image.
-          </p>
-
-          <p>
-            This creates a repeatable process where application changes
-            move from source control to deployment through the same
-            automated workflow.
+            This creates a repeatable workflow where application changes
+            can move from source control to deployment through the same
+            automated process.
           </p>
 
 
-          <div class="pipeline-list">
+          <!-- AZURE DEVOPS PIPELINE SCREENSHOT -->
 
-            <span>TEST</span>
-            <span>BUILD</span>
-            <span>PUSH</span>
-            <span>DEPLOY</span>
+          <figure class="project-shot">
 
-          </div>
+            <img
+              src="../assets/images/flask-pipeline.png"
+              alt="Azure DevOps CI/CD pipeline"
+              class="project-img"
+            >
+
+            <figcaption>
+              Azure DevOps pipeline automating testing, Docker image
+              creation and Kubernetes deployment.
+            </figcaption>
+
+          </figure>
 
         </div>
-
-
-        <!-- RIGHT -->
-
-        <figure class="project-media">
-
-          <img
-            src="../assets/images/flask-pipeline.png"
-            alt="Azure DevOps CI/CD pipeline"
-            class="project-img"
-          >
-
-          <figcaption>
-            Azure DevOps pipeline automating testing, Docker image
-            creation and Kubernetes deployment.
-          </figcaption>
-
-        </figure>
-
 
       </div>
 
@@ -584,85 +477,39 @@
          DEPLOYMENT
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">DEPLOYMENT</p>
-        <h2>Updating the application</h2>
-      </div>
+      <div class="project-detail">
 
+        <div>
 
-      <div class="project-content-grid">
+          <p class="number">DEPLOYMENT</p>
 
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
-
-          <p>
-            After the new Docker image is pushed to the container
-            registry, the Kubernetes Deployment is updated to use
-            the new image.
-          </p>
-
-          <p>
-            Kubernetes manages the application workload according
-            to the Deployment configuration.
-          </p>
-
-          <p>
-            The Kubernetes Service provides a consistent network
-            endpoint and directs incoming traffic to the running
-            application Pods.
-          </p>
-
-          <p>
-            Finally, I verify the Kubernetes resources and access the
-            running application to confirm that the new version has
-            been successfully deployed.
-          </p>
+          <h2>Updating the application</h2>
 
         </div>
 
 
-        <!-- RIGHT -->
-
-        <div class="project-info-card">
-
-          <span class="info-number">DEPLOYMENT FLOW</span>
-
-          <h3>Docker Hub</h3>
+        <div class="body-copy">
 
           <p>
-            Stores the newly built application image.
+            After the new Docker image is created and pushed to the
+            container registry, the Kubernetes Deployment is updated
+            to use the new image.
           </p>
 
-          <span class="info-arrow">↓</span>
-
-          <h3>Kubernetes Deployment</h3>
-
           <p>
-            Updates the application workload with the new image.
+            Kubernetes manages the application workload according to
+            the Deployment configuration, while the Service provides
+            a consistent network endpoint for reaching the application.
           </p>
 
-          <span class="info-arrow">↓</span>
-
-          <h3>Pod</h3>
-
           <p>
-            Runs the Flask application container.
-          </p>
-
-          <span class="info-arrow">↓</span>
-
-          <h3>Service</h3>
-
-          <p>
-            Provides a stable way to reach the running application.
+            I verified the deployment by checking the Kubernetes
+            resources and accessing the running Flask application.
           </p>
 
         </div>
-
 
       </div>
 
@@ -674,20 +521,20 @@
          TROUBLESHOOTING
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">TROUBLESHOOTING</p>
-        <h2>Learning from failures</h2>
-      </div>
+      <div class="project-detail">
+
+        <div>
+
+          <p class="number">TROUBLESHOOTING</p>
+
+          <h2>Learning from failures</h2>
+
+        </div>
 
 
-      <div class="project-content-grid">
-
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
+        <div class="body-copy">
 
           <p>
             An important part of the project was troubleshooting the
@@ -695,48 +542,22 @@
           </p>
 
           <p>
-            I learnt to investigate the deployment layer by layer
-            instead of immediately assuming that the pipeline itself
-            was the problem.
+            I learnt to work through the deployment layer by layer:
+            checking the pipeline output, confirming that the Docker
+            image was built successfully, verifying the Kubernetes
+            Deployment and Pods, and checking whether the Service
+            could reach the application.
           </p>
 
           <p>
-            I checked pipeline output, Docker image creation,
-            Kubernetes Deployments and Pods, and finally the Service
-            used to reach the application.
-          </p>
-
-          <p>
-            This helped me understand how problems at different stages
-            of a CI/CD workflow can affect the final deployment.
+            This helped me understand that a CI/CD failure does not
+            necessarily originate from the pipeline itself. Problems
+            can occur in the application code, automated tests,
+            container build, registry, configuration or deployment
+            environment.
           </p>
 
         </div>
-
-
-        <!-- RIGHT -->
-
-        <div class="project-info-card troubleshooting-card">
-
-          <span class="info-number">TROUBLESHOOTING APPROACH</span>
-
-          <h3>01 — Pipeline</h3>
-          <p>Check the pipeline logs and failed task.</p>
-
-          <h3>02 — Docker</h3>
-          <p>Confirm that the container image was built successfully.</p>
-
-          <h3>03 — Registry</h3>
-          <p>Verify that the expected image is available.</p>
-
-          <h3>04 — Kubernetes</h3>
-          <p>Check the Deployment and Pod status.</p>
-
-          <h3>05 — Networking</h3>
-          <p>Verify that the Service can reach the application.</p>
-
-        </div>
-
 
       </div>
 
@@ -748,20 +569,20 @@
          DEMONSTRATION
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">DEMONSTRATION</p>
-        <h2>Presenting the workflow</h2>
-      </div>
+      <div class="project-detail">
+
+        <div>
+
+          <p class="number">DEMONSTRATION</p>
+
+          <h2>Presenting the workflow</h2>
+
+        </div>
 
 
-      <div class="project-content-grid">
-
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
+        <div class="body-copy">
 
           <p>
             As part of the bootcamp exercise, I demonstrated the
@@ -775,23 +596,13 @@
           </p>
 
           <p>
-            The recording shows my walkthrough of the task and how
-            I explained the implementation during the class
+            The video below shows my walkthrough of the task and
+            how I explained the implementation during the class
             presentation.
           </p>
 
-          <p>
-            This also gave me practice explaining technical concepts
-            and demonstrating a working deployment process rather than
-            only implementing it.
-          </p>
 
-        </div>
-
-
-        <!-- RIGHT: VIDEO -->
-
-        <div>
+          <!-- CLASS DEMONSTRATION VIDEO -->
 
           <div class="project-video">
 
@@ -812,12 +623,12 @@
 
           </div>
 
+
           <p class="video-caption">
             Class demonstration of the Flask CI/CD deployment workflow.
           </p>
 
         </div>
-
 
       </div>
 
@@ -829,20 +640,20 @@
          REFLECTION
          ===================================================== -->
 
-    <section class="split-project-section">
+    <section>
 
-      <div class="project-section-heading">
-        <p class="number">REFLECTION</p>
-        <h2>What I learnt</h2>
-      </div>
+      <div class="project-detail">
+
+        <div>
+
+          <p class="number">REFLECTION</p>
+
+          <h2>What I learnt</h2>
+
+        </div>
 
 
-      <div class="project-content-grid">
-
-
-        <!-- LEFT -->
-
-        <div class="project-content-text">
+        <div class="body-copy">
 
           <p>
             This project made the CI/CD process much clearer to me
@@ -858,47 +669,19 @@
 
           <p>
             Working through failed builds and deployment issues also
-            improved my troubleshooting approach.
+            improved my troubleshooting approach. I learnt to identify
+            which stage of the workflow had failed, inspect the
+            relevant logs or resource state and verify each component
+            before moving to the next layer.
+          </p>
+
+          <p>
+            Most importantly, the project helped me understand how
+            source control, automated testing, containers, CI/CD and
+            Kubernetes fit together as one deployment workflow.
           </p>
 
         </div>
-
-
-        <!-- RIGHT -->
-
-        <div class="project-info-card">
-
-          <span class="info-number">KEY LEARNING</span>
-
-          <h3>Source Control</h3>
-          <p>
-            Managing application changes using Git and Azure Repos.
-          </p>
-
-          <h3>Containerisation</h3>
-          <p>
-            Packaging an application consistently using Docker.
-          </p>
-
-          <h3>Automation</h3>
-          <p>
-            Using Azure Pipelines to automate repeatable deployment tasks.
-          </p>
-
-          <h3>Orchestration</h3>
-          <p>
-            Understanding how Kubernetes Deployments, Pods and Services
-            work together.
-          </p>
-
-          <h3>Troubleshooting</h3>
-          <p>
-            Investigating problems across multiple layers of the
-            deployment workflow.
-          </p>
-
-        </div>
-
 
       </div>
 
@@ -917,9 +700,7 @@
 
     <span>© 2026 Muhammad Aliff</span>
 
-    <span>
-      Cloud • DevOps • Automation
-    </span>
+    <span>Cloud • DevOps • Automation</span>
 
   </footer>
 
